@@ -9,7 +9,6 @@ def test_forecast_missing_location(client):
 
 
 def test_forecast_success(monkeypatch, client):
-    # Création de 7 jours de données factices
     dummy_days = [
         {
             "datetime": f"2025-05-{10+i:02d}",
@@ -26,7 +25,6 @@ def test_forecast_success(monkeypatch, client):
         def json(self):
             return dummy_api_response
 
-    # Patch de la méthode requests.get importée dans app.py
     monkeypatch.setattr(
         'flask_weather_api.app.requests.get',
         lambda url, params: DummyResp(),

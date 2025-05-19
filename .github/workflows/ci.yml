@@ -1,6 +1,5 @@
 name: CI
 
-# Déclenchement sur push et pull request sur toutes les branches
 on:
   push: {}
   pull_request: {}
@@ -29,13 +28,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt pytest
 
+      # 4/ Ugly fix 
       - name: Create package alias
         run: ln -s $PWD flask_weather_api
 
-      # 4/ Run tests
+      # 5/ Run tests
       - name: Run tests
         run: export PYTHONPATH=$PWD; pytest --maxfail=1 --disable-warnings -q
 
-      # 5/ Build Docker image
+      # 6/ Build Docker image
       - name: Build Docker image
         run: docker build -t weather-api:ci .

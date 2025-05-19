@@ -4,14 +4,13 @@ from flask import Flask, request, jsonify
 import requests
 from statistics import mean
 
-# Charger les variables d'environnement
 load_dotenv()
 
 app = Flask(__name__)
 API_KEY = os.getenv('WEATHERBIT_API_KEY')
 BASE_URL = 'https://api.weatherbit.io/v2.0'
 
-# Échelle de Beaufort pour les tendances de vent
+#  https://www.rmets.org/metmatters/beaufort-wind-scale
 BEAUFORT_SCALE = [
     (1, 'Calme'),
     (5, 'Brise légère'),
@@ -103,7 +102,6 @@ def forecast_weather():
     if not data:
         return jsonify({'error': 'Aucune donnée retournée'}), 404
 
-    # Extract metrics
     temps = [day['temp'] for day in data]
     pressions = [day['pres'] for day in data]
     vents = [day['wind_spd'] * 3.6 for day in data]

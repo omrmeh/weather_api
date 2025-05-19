@@ -8,7 +8,6 @@ def test_current_missing_location(client):
 
 
 def test_current_success(monkeypatch, client):
-    # Dummy payload renvoyé par WeatherBit
     dummy_api_response = {
         "data": [{
             "weather": {"description": "Ensoleillé"},
@@ -37,7 +36,6 @@ def test_current_success(monkeypatch, client):
         def json(self):
             return dummy_api_response
 
-    # Patch de la méthode requests.get importée dans app.py
     monkeypatch.setattr(
         'flask_weather_api.app.requests.get',
         lambda url, params: DummyResp(),

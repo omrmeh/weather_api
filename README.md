@@ -40,8 +40,8 @@ Une API Flask exposant deux endpoints :
 5. Tester les endpoints :
 
    ```bash
-   curl "http://localhost:5000/weather/current?location=Paris"
-   curl "http://localhost:5000/weather/forecast?location=Paris"
+   curl "http://localhost:5000/weather/current?location=Toulouse"
+   curl "http://localhost:5000/weather/forecast?location=Bordeaux"
    ```
 
 ## Tests unitaires
