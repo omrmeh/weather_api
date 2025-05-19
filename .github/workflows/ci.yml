@@ -9,6 +9,9 @@ jobs:
   test-and-build:
     runs-on: ubuntu-latest
 
+    env:
+      PYTHONPATH: ${{ github.workspace }}
+
     steps:
       # 1/ Checkout du code
       - name: Checkout code
