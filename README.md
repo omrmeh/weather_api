@@ -1,5 +1,7 @@
 # Flask Weather API
 
+[![CI](https://github.com/omrmeh/weather_api/actions/workflows/ci.yml/badge.svg)](https://github.com/omrmeh/weather_api/actions/workflows/ci.yml)
+
 ## Description
 Une API Flask exposant deux endpoints :
 
