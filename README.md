@@ -12,7 +12,7 @@ Une API Flask exposant deux endpoints :
 ## Prérequis
 
 * Docker installé
-* Clé API WeatherBit (quota 50 appels/jour)
+* Clé API WeatherBit 
 
 ## Setup et exécution
 
@@ -22,10 +22,11 @@ Une API Flask exposant deux endpoints :
    git clone https://github.com/omrmeh/weather_api.git
    cd weather_api
    ```
-2. Copier `.env.example` en `.env` et renseigner :
+2. Ouvrir le `.env` et renseigner :
 
    ```ini
-   WEATHERBIT_API_KEY=your_api_key_here
+   WEATHERBIT_API_KEY=api_key
+   PORT=flask_port
    ```
 3. Builder l’image Docker :
 
